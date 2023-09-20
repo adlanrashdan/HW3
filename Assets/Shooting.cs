@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +9,7 @@ public class Shooting : MonoBehaviour
     public float bulletSpeed = 20.0f;
     public int numberOfBullets = 3; // Number of bullets to spawn per click
     public float bulletSpacing = 0.2f; // Spacing between bullets
+    public float bulletLifetime = 5.0f; // How long each bullet will last before being destroyed
 
     void Update()
     {
@@ -22,6 +22,10 @@ public class Shooting : MonoBehaviour
 
                 // Instantiate the bullet at the new spawn point
                 GameObject bullet = Instantiate(bulletPrefab, newSpawnPoint, Quaternion.Euler(0, 90, 0));
+
+                // Destroy the bullet after 'bulletLifetime' seconds
+                Destroy(bullet, bulletLifetime);
+                Debug.Log("Bullet Destroyed.");
 
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 if (rb != null)

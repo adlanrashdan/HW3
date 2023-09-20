@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             currentSpeed *= 2.0f; // Boost factor
+            Debug.Log("BOOST!");
+            
         }
 
         // Note: using Space.Self instead of Space.World
