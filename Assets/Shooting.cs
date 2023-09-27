@@ -11,8 +11,15 @@ public class Shooting : MonoBehaviour
     public float bulletSpacing = 0.2f; // Spacing between bullets
     public float bulletLifetime = 5.0f; // How long each bullet will last before being destroyed
 
+    private bool isGameOver = false; // New variable to keep track of the game state
+
     void Update()
     {
+        if (isGameOver)  // Check if the game is over
+        {
+            return; // Skip shooting if the game is over
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             for (int i = 0; i < numberOfBullets; i++)
@@ -38,5 +45,10 @@ public class Shooting : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void EndGame() // New method to set the isGameOver flag to true
+    {
+        isGameOver = true;
     }
 }
