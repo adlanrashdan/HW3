@@ -22,14 +22,14 @@ public class EnemyBehavior : MonoBehaviour
     {
         if ((initialPosition - transform.position).sqrMagnitude > destroyRangeSqr)
         {
-            Debug.Log("Enemy destroyed due to exceeding range limit.");
+           // Debug.Log("Enemy destroyed due to exceeding range limit.");
             Destroy(gameObject);
         }
     }
 
     private void OnDestroy()
     {
-        Debug.Log("Enemy destroyed.");
+        //Debug.Log("Enemy destroyed.");
 
         EnemySpawn enemySpawn = FindObjectOfType<EnemySpawn>();
         if (enemySpawn != null)

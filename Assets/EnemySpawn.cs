@@ -29,7 +29,7 @@ public class EnemySpawn : MonoBehaviour
                     planePosition.y,
                     Random.Range(planePosition.z - halfPlaneLength, planePosition.z + halfPlaneLength)
                 );
-                Debug.Log("Enemy spawned at: " + spawnPosition.ToString());
+                //Debug.Log("Enemy spawned at: " + spawnPosition.ToString());
                 Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
                 currentEnemies++;
             }

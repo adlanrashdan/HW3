@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Obstacles
   - Warzone
+  - Turret Bullet
+  - Bazooka
   layers:
   - Default
   - TransparentFX

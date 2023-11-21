@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             currentSpeed *= 2.0f; // Boost factor
-            Debug.Log("BOOST!");
         }
 
         // Use Rigidbody for movement
@@ -61,9 +60,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision Detected with " + collision.gameObject.name);  // Log the name of the collided object
+        //Debug.Log("Collision Detected with " + collision.gameObject.name);  // Log the name of the collided object
 
-        if (collision.gameObject.CompareTag("Obstacles"))
+        if (collision.gameObject.CompareTag("Turret Bullet"))
         {
             Debug.Log("Hit an obstacle! Attempting to show Game Over UI.");
             ShowGameOverUI();
@@ -80,7 +79,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Collided object is not an obstacle. It's tag is: " + collision.gameObject.tag);
+            //Debug.Log("Collided object is not an obstacle. It's tag is: " + collision.gameObject.tag);
         }
     }
 

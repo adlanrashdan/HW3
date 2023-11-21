@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
 
                 // Destroy the bullet after 'bulletLifetime' seconds
                 Destroy(bullet, bulletLifetime);
-                Debug.Log("Bullet Destroyed.");
+                //Debug.Log("Bullet Destroyed.");
 
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 if (rb != null)
